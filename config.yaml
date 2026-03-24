@@ -1,0 +1,51 @@
+project:
+  name: "Project Autonomous"
+  home: "~/project-autonomous"
+
+overseer:
+  model: "claude-sonnet-4-6"
+  subagent_model: "claude-sonnet-4-6"
+  max_tokens_per_cycle: 500000
+  max_concurrent_subagents: 3
+  auto_approve_ideas: false
+  cycle_interval: "manual"  # manual | 4h | 8h | 24h
+
+budgets:
+  global_daily_limit: 2000000
+  per_cycle_limit: 500000
+  per_subagent_task_limit: 100000
+  warning_threshold: 0.8
+  hard_stop_threshold: 1.0
+
+notifications:
+  service: "ntfy"  # ntfy | pushover | telegram
+  # Endpoint loaded from NOTIFY_ENDPOINT env var (see .env.example)
+  # For ntfy: "ntfy.sh/your-topic"
+  # For pushover: "user_key:api_token"
+  # For telegram: "bot_token:chat_id"
+  endpoint: "${NOTIFY_ENDPOINT}"
+  quiet_hours:
+    start: "23:00"
+    end: "08:00"
+  max_daily_alerts: 20
+
+notion:
+  # These get populated after first run or manually
+  master_hub_page_id: "32d04e72-25c4-816e-8c94-d25c768ab046"
+  review_pages:
+    marketing: ""
+    code: ""
+    ideas: ""
+    daily_summary: ""
+
+safety:
+  allowed_directories:
+    - "~/project-autonomous"
+    - "/tmp"
+  dump_folder: "~/project-autonomous/dump"
+  never_delete: true
+
+skills:
+  registry_path: "skills/registry.json"
+  matching_strategy: "keyword"  # keyword | embedding | llm
+  fallback_model: "claude-haiku-4-5-20251001"

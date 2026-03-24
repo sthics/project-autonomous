@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-24",
+  "skills": [
+    {
+      "id": "db-design",
+      "name": "Database Design",
+      "file": "skills/db-design.md",
+      "triggers": ["schema", "migration", "database", "SQL", "table", "ERD", "model", "postgres", "sqlite", "query", "index"],
+      "description": "Best practices for designing database schemas, migrations, and data models",
+      "category": "backend"
+    },
+    {
+      "id": "api-design",
+      "name": "API Design",
+      "file": "skills/api-design.md",
+      "triggers": ["API", "endpoint", "REST", "GraphQL", "route", "authentication", "JWT", "OAuth", "FastAPI", "Flask"],
+      "description": "RESTful API design, authentication, error handling, and documentation",
+      "category": "backend"
+    },
+    {
+      "id": "frontend",
+      "name": "Frontend Development",
+      "file": "skills/frontend.md",
+      "triggers": ["React", "CSS", "component", "UI", "layout", "responsive", "Tailwind", "Next.js", "landing page", "form"],
+      "description": "Modern frontend patterns, component architecture, styling, and UX",
+      "category": "frontend"
+    },
+    {
+      "id": "devops",
+      "name": "DevOps & Deployment",
+      "file": "skills/devops.md",
+      "triggers": ["Docker", "deploy", "CI/CD", "container", "nginx", "hosting", "SSL", "domain", "server", "cloud"],
+      "description": "Containerization, deployment, CI/CD pipelines, and infrastructure",
+      "category": "devops"
+    },
+    {
+      "id": "copywriting",
+      "name": "Copywriting & Marketing",
+      "file": "skills/copywriting.md",
+      "triggers": ["email", "outreach", "landing page", "headline", "CTA", "copy", "marketing", "pitch", "cold email"],
+      "description": "Persuasive writing for landing pages, emails, and marketing materials",
+      "category": "marketing"
+    },
+    {
+      "id": "market-research",
+      "name": "Market Research",
+      "file": "skills/market-research.md",
+      "triggers": ["market", "competitor", "niche", "industry", "TAM", "research", "customer", "buyer", "persona"],
+      "description": "Industry research, competitive analysis, and market sizing",
+      "category": "research"
+    },
+    {
+      "id": "testing",
+      "name": "Testing & QA",
+      "file": "skills/testing.md",
+      "triggers": ["test", "pytest", "unittest", "coverage", "QA", "bug", "assertion", "mock", "fixture"],
+      "description": "Test strategy, unit testing, integration testing, and test-driven development",
+      "category": "backend"
+    }
+  ]
+}
