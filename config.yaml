@@ -49,3 +49,32 @@ skills:
   registry_path: "skills/registry.json"
   matching_strategy: "keyword"  # keyword | embedding | llm
   fallback_model: "claude-haiku-4-5-20251001"
+
+# Phase 7 — Multi-Provider LLM Routing (via LiteLLM proxy at localhost:4000)
+# See MULTI_PROVIDER_PLAN.md for full architecture details.
+provider_routing:
+  coding:
+    primary: claude-sonnet-4-6
+    fallback: [gpt-4o, deepseek-coder-v3]
+  research:
+    primary: gemini-2.5-flash
+    fallback: [claude-sonnet-4-6, gpt-4o]
+  copywriting:
+    primary: gpt-4o
+    fallback: [claude-sonnet-4-6, gemini-2.5-flash]
+  classification:
+    primary: deepseek-v3
+    fallback: [claude-haiku, gpt-4o-mini]
+  default:
+    primary: claude-sonnet-4-6
+    fallback: [gpt-4o, gemini-2.5-flash]
+
+provider_budgets:
+  anthropic:
+    monthly_limit_usd: 50.00
+  google:
+    monthly_limit_usd: 30.00
+  openai:
+    monthly_limit_usd: 20.00
+  deepseek:
+    monthly_limit_usd: 10.00

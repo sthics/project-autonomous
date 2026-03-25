@@ -68,6 +68,8 @@ project-autonomous/
 ├── skill_router.py          # Auto-selects skills per task
 ├── alerts.py                # Phone + macOS notifications
 ├── token_tracker.py         # Budget monitoring
+├── provider_router.py       # Multi-provider LLM routing (Phase 7)
+├── MULTI_PROVIDER_PLAN.md   # Multi-provider architecture plan
 ├── requirements.txt         # Python dependencies
 ├── .claude/
 │   ├── CLAUDE.md            # Project context for all agents
@@ -100,10 +102,20 @@ The system writes all reviews to your Notion workspace:
 - Marketing review, Code review, Ideas review pages
 - Daily summaries with token breakdowns
 
+## Multi-Provider LLM Strategy (Phase 7)
+
+The system supports routing tasks to specialized LLM providers:
+- **Claude** → Coding & architecture (via Agent SDK)
+- **Gemini** → Research & web search
+- **GPT** → Copywriting & structured output
+- **DeepSeek/Ollama** → Cheap classification tasks
+
+See [`MULTI_PROVIDER_PLAN.md`](MULTI_PROVIDER_PLAN.md) for full details.
+
 ## Safety Rules
 
 1. **Never deletes data** — moves to `dump/` instead
-2. **Token budgets** — hard stops when limits are reached
+2. **Token budgets** — hard stops when limits are reached (per-provider in Phase 7)
 3. **Human approval required** for outreach and production deploys
 4. **Directory sandboxing** — agents stay within project root
-5. **All activity logged** to Notion and local files
+5. **All activity logged** to local files, synced to Notion
